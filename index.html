@@ -138,6 +138,8 @@
                             tabledata[i]['description'] = '이미 사용한 쿠폰'
                         } else if (data['resultCode'] === 'COUPON_WRONG') {
                             tabledata[i]['description'] = '잘못된 쿠폰 코드'
+			} else if (data['resultCode'] === 'COUPON_RESTRICT') {
+                            tabledata[i]['description'] = '쿠폰입력 연속 실패. 1시간 후 입력 가능.'
                         } else {
                             tabledata[i]['description'] = '나도 모르는 응답코드'
                         }
