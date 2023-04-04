@@ -50,9 +50,16 @@
             return null
         }
 
-        let uid = getCookie('uid')
+        const urlParams = new URL(location.href).searchParams;
+        const name = urlParams.get('name');
+        if (name) { $('#uid').val(name) }
+        else
+        {
+            let uid = getCookie('uid')
 
-        if (uid) { $('#uid').val(uid) }
+            if (uid) { $('#uid').val(uid) }
+        }
+	    
         var tabledata = [
             { id: 1, code: "", result: 0, response: '', description: '요청 전' },
             { id: 2, code: " ", result: 0, response: '', description: '요청 전' },
